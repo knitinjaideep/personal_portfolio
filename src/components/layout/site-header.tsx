@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from '@/components/ui/theme-toggle';
@@ -16,6 +17,7 @@ const navItems = [
 ];
 
 export default function SiteHeader() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,6 +29,10 @@ export default function SiteHeader() {
   }, []);
 
   useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     if (!isOpen) return;
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setIsOpen(false);
@@ -35,18 +41,25 @@ export default function SiteHeader() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
 
+  const overHero = pathname === '/' && !isScrolled;
+
   return (
     <header
-      className={`sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-xl transition duration-300 ${
-        isScrolled ? 'shadow-glow/10' : ''
+      className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
+        overHero
+          ? 'border-transparent bg-transparent'
+          : 'border-border bg-background/90 backdrop-blur-md'
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.24em] text-text-primary">
+          <Link
+            href="/"
+            className="text-sm font-semibold uppercase tracking-[0.24em] text-text-primary"
+          >
             NITIN
           </Link>
-          <DesktopNavigation />
+          <DesktopNavigation navItems={navItems} />
         </div>
 
         <div className="flex items-center gap-3">
@@ -63,7 +76,7 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <MobileNavigation isOpen={isOpen} navItems={navItems} onNavigate={() => setIsOpen(false)} />
+      <MobileNavigation isOpen={isOpen} navItems={navItems} onClose={() => setIsOpen(false)} />
     </header>
   );
 }

@@ -4,13 +4,14 @@ import type { ReactNode } from 'react';
 interface TextLinkProps {
   href: string;
   children: ReactNode;
+  className?: string;
 }
 
-export default function TextLink({ href, children }: TextLinkProps) {
+export default function TextLink({ href, children, className = '' }: TextLinkProps) {
   return (
     <Link
       href={href}
-      className="font-medium text-accent transition hover:text-accentHover"
+      className={`font-medium text-accent transition hover:text-accentHover ${className}`}
     >
       {children}
     </Link>

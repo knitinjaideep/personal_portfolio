@@ -30,6 +30,9 @@ const config: Config = {
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
       },
+      animation: {
+        'float-slow': 'float-layer 5s ease-in-out infinite alternate',
+      },
     },
   },
   plugins: [],

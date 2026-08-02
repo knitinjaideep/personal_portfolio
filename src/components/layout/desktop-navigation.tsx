@@ -1,25 +1,38 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-const navItems = [
-  { href: '/work', label: 'Work' },
-  { href: '/lab', label: 'Lab' },
-  { href: '/notes', label: 'Notes' },
-  { href: '/about', label: 'About' },
-  { href: '/resume', label: 'Résumé' },
-];
+type NavItem = {
+  href: string;
+  label: string;
+};
 
-export default function DesktopNavigation() {
+interface DesktopNavigationProps {
+  navItems: NavItem[];
+}
+
+export default function DesktopNavigation({ navItems }: DesktopNavigationProps) {
+  const pathname = usePathname();
+
   return (
     <nav className="hidden items-center gap-6 md:flex">
-      {navItems.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="text-sm font-medium text-text-muted transition hover:text-text-primary"
-        >
-          {item.label}
-        </Link>
-      ))}
+      {navItems.map((item) => {
+        const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-current={isActive ? 'page' : undefined}
+            className={`text-sm font-medium transition ${
+              isActive ? 'text-accent' : 'text-text-muted hover:text-text-primary'
+            }`}
+          >
+            {item.label}
+          </Link>
+        );
+      })}
     </nav>
   );
 }
