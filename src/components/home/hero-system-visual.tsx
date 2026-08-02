@@ -138,7 +138,7 @@ export default function HeroSystemVisual() {
             <span
               key={label}
               style={{ top }}
-              className="absolute left-[86%] -translate-y-1/2 whitespace-nowrap text-xs font-medium uppercase tracking-[0.18em] text-heroTextMuted"
+              className="absolute left-[86%] -translate-y-1/2 whitespace-nowrap text-xs font-medium uppercase tracking-[0.18em] text-text-muted"
             >
               {label}
             </span>

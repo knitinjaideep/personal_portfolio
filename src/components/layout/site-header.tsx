@@ -42,7 +42,6 @@ export default function SiteHeader() {
   }, [isOpen]);
 
   const overHero = pathname === '/' && !isScrolled;
-  const navVariant = overHero ? 'onHero' : 'default';
 
   return (
     <header
@@ -56,24 +55,18 @@ export default function SiteHeader() {
         <div className="flex items-center gap-6">
           <Link
             href="/"
-            className={`text-sm font-semibold uppercase tracking-[0.24em] transition-colors ${
-              overHero ? 'text-heroText' : 'text-text-primary'
-            }`}
+            className="text-sm font-semibold uppercase tracking-[0.24em] text-text-primary"
           >
             NITIN
           </Link>
-          <DesktopNavigation navItems={navItems} variant={navVariant} />
+          <DesktopNavigation navItems={navItems} />
         </div>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle variant={navVariant} />
+          <ThemeToggle />
           <button
             type="button"
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden ${
-              overHero
-                ? 'border-heroBorder bg-white/10 text-heroText hover:bg-white/15 focus-visible:ring-offset-heroBackground'
-                : 'border-border bg-surface text-text-primary hover:bg-surfaceElevated focus-visible:ring-offset-background'
-            }`}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-text-primary transition hover:bg-surfaceElevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((prev) => !prev)}

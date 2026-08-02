@@ -10,13 +10,9 @@ type NavItem = {
 
 interface DesktopNavigationProps {
   navItems: NavItem[];
-  variant?: 'default' | 'onHero';
 }
 
-export default function DesktopNavigation({
-  navItems,
-  variant = 'default',
-}: DesktopNavigationProps) {
+export default function DesktopNavigation({ navItems }: DesktopNavigationProps) {
   const pathname = usePathname();
 
   return (
@@ -30,11 +26,7 @@ export default function DesktopNavigation({
             href={item.href}
             aria-current={isActive ? 'page' : undefined}
             className={`text-sm font-medium transition ${
-              isActive
-                ? 'text-accent'
-                : variant === 'onHero'
-                  ? 'text-heroTextMuted hover:text-heroText'
-                  : 'text-text-muted hover:text-text-primary'
+              isActive ? 'text-accent' : 'text-text-muted hover:text-text-primary'
             }`}
           >
             {item.label}
