@@ -18,6 +18,13 @@ const config: Config = {
         purpleGlow: 'var(--purple-glow)',
         statusActive: 'var(--status-active)',
         statusComingSoon: 'var(--status-coming-soon)',
+        heroBackground: 'var(--hero-background)',
+        heroSurface: 'var(--hero-surface)',
+        heroSurfaceElevated: 'var(--hero-surface-elevated)',
+        heroBorder: 'var(--hero-border)',
+        heroBorderStrong: 'var(--hero-border-strong)',
+        heroText: 'var(--hero-text-primary)',
+        heroTextMuted: 'var(--hero-text-muted)',
       },
       boxShadow: {
         glow: '0 0 0 1px rgba(167, 139, 250, 0.12), 0 0 30px rgba(168, 85, 247, 0.12)',
@@ -29,6 +36,9 @@ const config: Config = {
         sm: 'var(--radius-sm)',
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
+      },
+      animation: {
+        'float-slow': 'float-layer 5s ease-in-out infinite alternate',
       },
     },
   },
