@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/lab/page": "app/lab/page.js",
+  "/about/page": "app/about/page.js",
+  "/work/coral/page": "app/work/coral/page.js",
+  "/work/home-journey/page": "app/work/home-journey/page.js",
+  "/page": "app/page.js",
+  "/resume/page": "app/resume/page.js",
+  "/notes/page": "app/notes/page.js",
+  "/work/page": "app/work/page.js"
+}
