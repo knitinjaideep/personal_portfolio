@@ -1,17 +1,24 @@
-import Container from '@/components/ui/container';
-import SectionHeader from '@/components/ui/section-header';
-import ComingSoonPanel from '@/components/project/coming-soon-panel';
+import type { Metadata } from 'next';
+import AboutIntroductionSection from '@/components/about/introduction-section';
+import AboutPhilosophySection from '@/components/about/philosophy-section';
+import AboutCurrentFocusSection from '@/components/about/current-focus-section';
+import AboutTimelineSection from '@/components/about/timeline-section';
+import ContactCta from '@/components/contact/contact-cta';
+
+export const metadata: Metadata = {
+  title: 'About — Nitin Kotcherlakota',
+  description:
+    'Nitin Kotcherlakota is a software engineer focused on building thoughtful products and growing deeper into AI systems engineering.',
+};
 
 export default function AboutPage() {
   return (
-    <Container className="py-16 sm:py-24">
-      <SectionHeader
-        title="About"
-        description="Learn more about Nitin’s approach to product, engineering, and AI."
-      />
-      <div className="mt-10">
-        <ComingSoonPanel label="About" />
-      </div>
-    </Container>
+    <>
+      <AboutIntroductionSection />
+      <AboutPhilosophySection />
+      <AboutCurrentFocusSection />
+      <AboutTimelineSection />
+      <ContactCta />
+    </>
   );
 }
