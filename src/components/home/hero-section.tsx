@@ -1,7 +1,8 @@
-import { Github, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 import Container from '@/components/ui/container';
 import PrimaryButton from '@/components/ui/primary-button';
 import HeroSystemVisual from '@/components/home/hero-system-visual';
+import { getContactLinks } from '@/components/contact/contact-links';
 
 const INTERESTS = [
   'Personal Finance',
@@ -11,12 +12,9 @@ const INTERESTS = [
   'Developer Tools',
 ];
 
-const SOCIAL_PLACEHOLDERS = [
-  { label: 'GitHub', icon: Github },
-  { label: 'LinkedIn', icon: Linkedin },
-];
-
 export default function HeroSection() {
+  const contactLinks = getContactLinks();
+
   return (
     <section className="relative -mt-16 overflow-hidden bg-background">
       <div
@@ -68,26 +66,29 @@ export default function HeroSection() {
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <PrimaryButton href="/work">Explore my work</PrimaryButton>
-              <a
+              <Link
                 href="/about"
                 className="inline-flex items-center justify-center rounded-full border border-borderStrong bg-transparent px-6 py-3 text-sm font-semibold text-text-primary transition hover:bg-surfaceElevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 About me
-              </a>
+              </Link>
             </div>
 
-            <div className="mt-9 flex items-center gap-3">
-              {SOCIAL_PLACEHOLDERS.map(({ label, icon: Icon }) => (
-                <span
-                  key={label}
-                  title={`${label} — link coming soon`}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-muted"
-                >
-                  <Icon size={16} aria-hidden="true" />
-                  <span className="sr-only">{label} profile (coming soon)</span>
-                </span>
-              ))}
-            </div>
+            {contactLinks.length > 0 ? (
+              <div className="mt-9 flex items-center gap-3">
+                {contactLinks.map(({ id, href, accessibleLabel, icon: Icon, external }) => (
+                  <a
+                    key={id}
+                    href={href}
+                    aria-label={accessibleLabel}
+                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-muted transition hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    <Icon size={16} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <HeroSystemVisual />

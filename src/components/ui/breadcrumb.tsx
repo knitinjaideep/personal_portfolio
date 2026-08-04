@@ -20,11 +20,17 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
             <li key={item.label} className="flex items-center gap-2">
               {index > 0 ? <span aria-hidden="true">/</span> : null}
               {item.href && !isLast ? (
-                <Link href={item.href} className="transition hover:text-text-primary">
+                <Link
+                  href={item.href}
+                  className="inline-flex items-center py-1 transition hover:text-text-primary"
+                >
                   {item.label}
                 </Link>
               ) : (
-                <span aria-current={isLast ? 'page' : undefined} className="text-text-primary">
+                <span
+                  aria-current={isLast ? 'page' : undefined}
+                  className="inline-flex items-center py-1 text-text-primary"
+                >
                   {item.label}
                 </span>
               )}

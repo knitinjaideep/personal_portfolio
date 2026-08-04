@@ -11,7 +11,7 @@ export default function TextLink({ href, children, className = '' }: TextLinkPro
   return (
     <Link
       href={href}
-      className={`font-medium text-accent transition hover:text-accentHover ${className}`}
+      className={`inline-flex items-center py-1 font-medium text-accent transition hover:text-accentHover ${className}`}
     >
       {children}
     </Link>

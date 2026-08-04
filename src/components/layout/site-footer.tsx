@@ -34,7 +34,7 @@ export default function SiteFooter() {
         <p>&copy; {new Date().getFullYear()} Nitin Kotcherlakota</p>
         <a
           href="#content"
-          className="inline-flex items-center gap-1 text-accent transition hover:text-accentHover"
+          className="inline-flex items-center gap-1 py-1.5 text-accent transition hover:text-accentHover"
         >
           Back to top <ArrowUpRight size={14} />
         </a>
