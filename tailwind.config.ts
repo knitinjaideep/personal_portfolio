@@ -12,6 +12,8 @@ const config: Config = {
         borderStrong: 'var(--border-strong)',
         text: 'var(--text-primary)',
         textMuted: 'var(--text-muted)',
+        'text-primary': 'var(--text-primary)',
+        'text-muted': 'var(--text-muted)',
         accent: 'var(--accent)',
         accentHover: 'var(--accent-hover)',
         accentTint: 'var(--accent-tint)',
@@ -21,6 +23,8 @@ const config: Config = {
         warmTint: 'var(--warm-tint)',
         statusActive: 'var(--status-active)',
         statusComingSoon: 'var(--status-coming-soon)',
+        'status-active': 'var(--status-active)',
+        'status-coming-soon': 'var(--status-coming-soon)',
       },
       boxShadow: {
         glow: '0 0 0 1px rgba(167, 139, 250, 0.12), 0 0 30px rgba(168, 85, 247, 0.12)',
