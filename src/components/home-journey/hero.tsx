@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Container from '@/components/ui/container';
 import StatusBadge from '@/components/ui/status-badge';
 import SecondaryButton from '@/components/ui/secondary-button';
-import HomeJourneyBreadcrumb from '@/components/home-journey/breadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import HomeJourneyProductPreview from '@/components/home-journey/product-preview';
 
 export default function HomeJourneyHero() {
@@ -20,7 +20,7 @@ export default function HomeJourneyHero() {
       />
 
       <Container className="relative pb-16 pt-8 sm:pb-20 sm:pt-10">
-        <HomeJourneyBreadcrumb />
+        <Breadcrumb items={[{ label: 'Work', href: '/work' }, { label: 'Home Journey' }]} />
 
         <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center lg:gap-10">
           <div className="max-w-2xl">

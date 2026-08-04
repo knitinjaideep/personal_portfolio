@@ -1,0 +1,114 @@
+export interface TimelineStage {
+  label: string;
+  description: string;
+}
+
+export interface PhilosophyTheme {
+  title: string;
+  description: string;
+}
+
+export interface ProfileContent {
+  name: string;
+  initials: string;
+  heading: string;
+  shortBio: string;
+  positioning: string;
+  interests: string[];
+  currentFocus: string[];
+  philosophy: PhilosophyTheme[];
+  timeline: TimelineStage[];
+  githubUrl: string | null;
+  linkedinUrl: string | null;
+  email: string | null;
+  resumePath: string | null;
+  resumeFileType: string | null;
+  portraitPath: string | null;
+}
+
+export const profile: ProfileContent = {
+  name: 'Nitin Kotcherlakota',
+  initials: 'NK',
+  heading: 'Hey, I’m Nitin.',
+  shortBio:
+    'I’m a software engineer focused on building thoughtful products and growing deeper into AI systems engineering.',
+  positioning:
+    'I’m interested in the point where engineering, product design, privacy, and real human decision-making meet.',
+  interests: [
+    'AI system design',
+    'Agentic workflows',
+    'Local and privacy-conscious AI',
+    'Product architecture',
+    'Developer experience',
+    'Human-centered interfaces',
+    'Personal finance products',
+    'Homeownership products',
+  ],
+  currentFocus: [
+    'Building Home Journey',
+    'Exploring AI systems engineering',
+    'Developing agentic workflow skills',
+    'Learning from local-model experimentation',
+    'Improving product and system design judgment',
+  ],
+  philosophy: [
+    {
+      title: 'Build for real human decisions',
+      description: 'Design for how people actually decide and act, not for idealized edge cases.',
+    },
+    {
+      title: 'Prefer clarity over unnecessary complexity',
+      description: 'A simpler system that is easy to reason about beats a clever one that isn’t.',
+    },
+    {
+      title: 'Treat privacy as a product decision',
+      description: 'What a system collects and retains is a design choice, not an afterthought.',
+    },
+    {
+      title: 'Use AI where it adds genuine value',
+      description: 'Reach for AI because it solves the problem, not because it’s available.',
+    },
+    {
+      title: 'Make systems understandable and maintainable',
+      description: 'Software should stay legible to the next person who has to change it.',
+    },
+  ],
+  // No verified employment or education dates exist yet, so the timeline
+  // intentionally uses broad, non-dated stages instead of fabricated years.
+  timeline: [
+    {
+      label: 'Software engineering foundation',
+      description: 'Learned the fundamentals of writing and shipping software.',
+    },
+    {
+      label: 'Building full-stack systems',
+      description: 'Worked across the stack, from interfaces to backend systems.',
+    },
+    {
+      label: 'Exploring AI engineering',
+      description: 'Started exploring how AI systems are designed and built.',
+    },
+    {
+      label: 'Developing independent products',
+      description: 'Building independent products end-to-end, including Home Journey.',
+    },
+    {
+      label: 'Current focus',
+      description: 'Focused on AI systems engineering and agentic workflows.',
+    },
+  ],
+  // Verified from this repository's own git remote (github.com/knitinjaideep/personal_portfolio).
+  githubUrl: 'https://github.com/knitinjaideep',
+  // TODO(profile): add a verified public LinkedIn URL when available. Do not
+  // publish a guessed or unverified profile link.
+  linkedinUrl: null,
+  email: 'nitin.kotcherlakota@gmail.com',
+  // TODO(resume): add the real resume PDF at public/nitin-kotcherlakota-resume.pdf
+  // and set resumePath (e.g. '/nitin-kotcherlakota-resume.pdf') and resumeFileType
+  // (e.g. 'PDF') once the file exists. Do not fabricate resume content.
+  resumePath: null,
+  resumeFileType: null,
+  // TODO(portrait): add a verified real portrait asset path when available
+  // (e.g. '/portrait.jpg'). Never use AI-generated human imagery as a stand-in.
+  portraitPath: null,
+};
