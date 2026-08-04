@@ -22,7 +22,7 @@ export default function HomeJourneyHero() {
       <Container className="relative pb-16 pt-8 sm:pb-20 sm:pt-10">
         <HomeJourneyBreadcrumb />
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center lg:gap-10">
+        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center lg:gap-10">
           <div className="max-w-2xl">
             <StatusBadge variant="active">Active Development</StatusBadge>
 
