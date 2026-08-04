@@ -2,9 +2,6 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import ThemeProvider from '@/components/layout/theme-provider';
-import SkipToContent from '@/components/layout/skip-to-content';
-import SiteFooter from '@/components/layout/site-footer';
-import SiteHeader from '@/components/layout/site-header';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -36,14 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen bg-background text-text-primary">
-            <SkipToContent />
-            <SiteHeader />
-            <main id="content" className="flex-1">
-              {children}
-            </main>
-            <SiteFooter />
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

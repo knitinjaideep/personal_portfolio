@@ -111,3 +111,22 @@ body {
     transform: translateY(-10px);
   }
 }
+
+/* /resume/print: US Letter page, no animation, no shadows, selectable text. */
+@media print {
+  @page {
+    size: letter;
+    margin: 0.6in 0.75in;
+  }
+
+  .resume-print-page {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-print-page * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+}
