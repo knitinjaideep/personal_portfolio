@@ -1,0 +1,164 @@
+export default function HouseRecordIllustration() {
+  return (
+    <svg
+      viewBox="0 0 400 320"
+      className="h-auto w-full max-w-sm text-accent"
+      fill="none"
+      aria-hidden="true"
+    >
+      {/* Stacked record cards, peeking out behind the house */}
+      <g className="text-warm" opacity="0.85">
+        <rect
+          x="252"
+          y="120"
+          width="108"
+          height="82"
+          rx="8"
+          fill="var(--warm-tint)"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="270"
+          y1="144"
+          x2="336"
+          y2="144"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.6"
+        />
+        <line
+          x1="270"
+          y1="160"
+          x2="322"
+          y2="160"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.6"
+        />
+        <line
+          x1="270"
+          y1="176"
+          x2="330"
+          y2="176"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.6"
+        />
+      </g>
+      <g opacity="0.85">
+        <rect
+          x="30"
+          y="150"
+          width="96"
+          height="72"
+          rx="8"
+          fill="var(--accent-tint)"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <line
+          x1="48"
+          y1="172"
+          x2="106"
+          y2="172"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.6"
+        />
+        <line
+          x1="48"
+          y1="188"
+          x2="92"
+          y2="188"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.6"
+        />
+      </g>
+
+      {/* House */}
+      <path
+        d="M90 174 L200 96 L310 174 V270 A8 8 0 0 1 302 278 H98 A8 8 0 0 1 90 270 Z"
+        fill="var(--surface)"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M70 190 L200 96 L330 190"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <rect
+        x="176"
+        y="212"
+        width="48"
+        height="66"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2.25"
+      />
+      <line
+        x1="200"
+        y1="212"
+        x2="200"
+        y2="278"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        opacity="0.4"
+      />
+      <rect x="118" y="196" width="34" height="34" rx="2" stroke="currentColor" strokeWidth="2" />
+      <line
+        x1="135"
+        y1="196"
+        x2="135"
+        y2="230"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        opacity="0.5"
+      />
+      <line
+        x1="118"
+        y1="213"
+        x2="152"
+        y2="213"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        opacity="0.5"
+      />
+      <rect x="248" y="196" width="34" height="34" rx="2" stroke="currentColor" strokeWidth="2" />
+      <line
+        x1="265"
+        y1="196"
+        x2="265"
+        y2="230"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        opacity="0.5"
+      />
+      <line
+        x1="248"
+        y1="213"
+        x2="282"
+        y2="213"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        opacity="0.5"
+      />
+      <path
+        d="M258 120 V88 H278 V138"
+        stroke="currentColor"
+        strokeWidth="2.25"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

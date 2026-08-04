@@ -5,6 +5,7 @@ A personal portfolio and product studio website for Nitin Kotcherlakota, focused
 ## Purpose
 
 This repository establishes the portfolio foundation and design system:
+
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
