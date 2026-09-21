@@ -108,7 +108,9 @@ export const profile: ProfileContent = {
   // (e.g. 'PDF') once the file exists. Do not fabricate resume content.
   resumePath: null,
   resumeFileType: null,
-  // TODO(portrait): add a verified real portrait asset path when available
-  // (e.g. '/portrait.jpg'). Never use AI-generated human imagery as a stand-in.
-  portraitPath: null,
+  // Approved real portrait, see src/assets/images/nitin-portrait.jpg. The
+  // Portrait component imports the file directly through Next.js static
+  // image handling; this string is used only as an "is a portrait set"
+  // flag and for documentation.
+  portraitPath: '/src/assets/images/nitin-portrait.jpg',
 };

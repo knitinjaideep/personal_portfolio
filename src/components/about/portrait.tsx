@@ -1,23 +1,34 @@
 import Image from 'next/image';
+import nitinPortraitImage from '@/assets/images/nitin-portrait.jpg';
 
 interface PortraitProps {
   name: string;
   initials: string;
+  // Only one approved portrait exists in this repository, so this string is
+  // a "portrait available" flag rather than a literal image src. The file
+  // lives under src/assets and must be loaded through a static import.
   portraitPath: string | null;
 }
 
 export default function Portrait({ name, initials, portraitPath }: PortraitProps) {
   if (portraitPath) {
     return (
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-border bg-surface">
-        <Image
-          src={portraitPath}
-          alt={`Portrait of ${name}`}
-          fill
-          sizes="(min-width: 1024px) 420px, 100vw"
-          className="object-cover"
-          priority
+      <div className="relative aspect-[4/5] w-full">
+        <div
+          aria-hidden="true"
+          className="absolute -inset-2.5 -z-10 rounded-[2rem] border border-accent/20"
         />
+        <div className="relative h-full w-full overflow-hidden rounded-[1.75rem] border border-border bg-surface shadow-sm">
+          <Image
+            src={nitinPortraitImage}
+            alt={`Portrait of ${name}`}
+            fill
+            sizes="(min-width: 1024px) 420px, 100vw"
+            className="object-cover"
+            style={{ objectPosition: '50% 58%' }}
+            priority
+          />
+        </div>
       </div>
     );
   }

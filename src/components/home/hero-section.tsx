@@ -1,16 +1,12 @@
 import Link from 'next/link';
 import Container from '@/components/ui/container';
 import PrimaryButton from '@/components/ui/primary-button';
-import HeroSystemVisual from '@/components/home/hero-system-visual';
+import Portrait from '@/components/about/portrait';
 import { getContactLinks } from '@/components/contact/contact-links';
+import { profile } from '@/content/profile';
 
-const INTERESTS = [
-  'Personal Finance',
-  'Homeownership',
-  'Local AI',
-  'Agentic Systems',
-  'Developer Tools',
-];
+const HERO_INTERESTS = profile.interests.slice(0, 5);
+const HERO_FOCUS = profile.currentFocus.slice(0, 3);
 
 export default function HeroSection() {
   const contactLinks = getContactLinks();
@@ -37,7 +33,7 @@ export default function HeroSection() {
             </p>
 
             <h1 className="mt-6 text-5xl font-semibold tracking-tight text-text-primary sm:text-6xl lg:text-7xl">
-              Nitin Kotcherlakota
+              {profile.name}
             </h1>
 
             <p className="mt-4 text-2xl font-medium leading-snug text-text-primary sm:text-3xl">
@@ -46,16 +42,14 @@ export default function HeroSection() {
             </p>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-text-muted sm:text-lg">
-              I build software that helps make complicated life decisions feel manageable. Currently
-              exploring thoughtful AI experiences for personal finance, homeownership, and everyday
-              decision-making.
+              {profile.shortBio} {profile.positioning}
             </p>
 
             <ul className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-sm text-text-muted">
-              {INTERESTS.map((interest, index) => (
+              {HERO_INTERESTS.map((interest, index) => (
                 <li key={interest} className="flex items-center gap-3">
                   <span>{interest}</span>
-                  {index < INTERESTS.length - 1 ? (
+                  {index < HERO_INTERESTS.length - 1 ? (
                     <span aria-hidden="true" className="text-borderStrong">
                       &bull;
                     </span>
@@ -91,7 +85,31 @@ export default function HeroSection() {
             ) : null}
           </div>
 
-          <HeroSystemVisual />
+          <div className="mx-auto w-full max-w-sm lg:max-w-none">
+            <div className="relative">
+              <Portrait
+                name={profile.name}
+                initials={profile.initials}
+                portraitPath={profile.portraitPath}
+              />
+              <div className="mt-5 rounded-[1.5rem] border border-border bg-surface/85 p-5 shadow-sm backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                  Current Focus
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {HERO_FOCUS.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-text-muted">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
