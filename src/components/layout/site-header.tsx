@@ -66,33 +66,33 @@ export default function SiteHeader() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isOpen, closeMenu]);
 
-  const overHero = pathname === '/' && !isScrolled;
-
   return (
-    <header
-      className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
-        overHero
-          ? 'border-transparent bg-transparent'
-          : 'border-border bg-background/90 backdrop-blur-md'
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-6">
+    <header className="sticky top-3 z-40 px-3 sm:px-4">
+      <div
+        className={`site-glass-header relative mx-auto grid h-14 max-w-5xl grid-cols-[1fr_auto_1fr] items-center rounded-full px-4 transition-all duration-300 sm:px-5 ${
+          isScrolled || pathname !== '/'
+            ? 'shadow-[0_18px_48px_var(--nav-glass-shadow)]'
+            : 'shadow-[0_14px_36px_var(--nav-glass-shadow)]'
+        }`}
+      >
+        <div className="flex min-w-0 items-center justify-self-start">
           <Link
             href="/"
-            className="inline-flex items-center py-2 text-sm font-semibold uppercase tracking-[0.24em] text-text-primary"
+            className="inline-flex items-center whitespace-nowrap rounded-full px-1 py-2 text-sm font-extrabold uppercase tracking-[0.2em] text-accent transition duration-200 hover:scale-110 hover:text-warm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-[0.95rem]"
+            aria-label="Nitin home"
           >
-            NITIN
+            Nitin
           </Link>
-          <DesktopNavigation navItems={navItems} pathname={pathname} />
         </div>
 
-        <div className="flex items-center gap-3">
+        <DesktopNavigation navItems={navItems} pathname={pathname} />
+
+        <div className="flex items-center gap-3 justify-self-end">
           <ThemeToggle />
           <button
             ref={toggleButtonRef}
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-text-primary transition hover:bg-surfaceElevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-surface/45 text-text-primary transition duration-200 hover:scale-110 hover:bg-surfaceElevated hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((prev) => !prev)}

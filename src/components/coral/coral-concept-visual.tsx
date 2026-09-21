@@ -25,9 +25,9 @@ export default function CoralConceptVisual({ compact = false }: CoralConceptVisu
     >
       <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-3.5">
         <div className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-status-coming-soon" />
+          <span className="h-2.5 w-2.5 rounded-full bg-status-active" />
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">
-            Coral &middot; Coming Soon
+            Coral &middot; Local-first
           </span>
         </div>
         <span className="hidden rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-text-muted sm:inline-flex">

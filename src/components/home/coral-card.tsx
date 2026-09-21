@@ -1,18 +1,17 @@
-import Link from 'next/link';
-import StatusBadge from '@/components/ui/status-badge';
+import ProductCard from '@/components/work/product-card';
 
 const BAR_HEIGHTS = [35, 58, 42, 70, 50, 64];
 
 function CoralDashboardPreview() {
   return (
     <div
-      className="mt-6 overflow-hidden rounded-2xl border border-border bg-background/60 p-4"
+      className="w-full overflow-hidden rounded-2xl border border-border bg-background/60 p-4"
       aria-hidden="true"
     >
       <div className="flex items-center gap-2 border-b border-border pb-3">
-        <span className="h-2 w-2 rounded-full bg-status-coming-soon" />
+        <span className="h-2 w-2 rounded-full bg-status-active" />
         <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-text-muted">
-          Coral &middot; Demonstration data
+          Coral &middot; Local analysis
         </span>
       </div>
 
@@ -58,26 +57,11 @@ function CoralDashboardPreview() {
 
 export default function CoralCard() {
   return (
-    <article className="flex h-full flex-col rounded-[2rem] border border-border bg-surface p-6 shadow-sm sm:p-8">
-      <StatusBadge variant="coming-soon">Coming Soon</StatusBadge>
-
-      <h3 className="mt-5 text-2xl font-semibold tracking-tight text-text-primary sm:text-3xl">
-        Coral
-      </h3>
-
-      <p className="mt-3 max-w-lg text-sm leading-7 text-text-muted sm:text-base">
-        A privacy-focused financial intelligence concept designed to turn fragmented financial
-        information into understandable answers.
-      </p>
-
-      <CoralDashboardPreview />
-
-      <Link
-        href="/work/coral"
-        className="mt-6 inline-flex w-fit items-center justify-center rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-text-muted transition hover:border-borderStrong hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        Coming Soon
-      </Link>
-    </article>
+    <ProductCard
+      title="Coral"
+      description="A local-first financial statement analyzer designed to turn fragmented private statements into dashboards and grounded answers."
+      href="/work/coral"
+      visual={<CoralDashboardPreview />}
+    />
   );
 }

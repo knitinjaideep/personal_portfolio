@@ -1,6 +1,4 @@
-import { ArrowRight } from 'lucide-react';
-import StatusBadge from '@/components/ui/status-badge';
-import TextLink from '@/components/ui/text-link';
+import ProductCard from '@/components/work/product-card';
 
 function BuyingHomeIcon() {
   return (
@@ -68,36 +66,26 @@ function OwnedHomeIcon() {
 
 export default function HomeJourneyCard() {
   return (
-    <article className="flex h-full flex-col rounded-[2rem] border border-border bg-surface p-6 shadow-glow sm:p-8">
-      <StatusBadge variant="active">Active Development</StatusBadge>
-
-      <h3 className="mt-5 text-2xl font-semibold tracking-tight text-text-primary sm:text-3xl">
-        Home Journey
-      </h3>
-
-      <p className="mt-3 max-w-lg text-sm leading-7 text-text-muted sm:text-base">
-        A notes-first platform that helps people organize the journey from buying a home to owning
-        and maintaining it.
-      </p>
-
-      <div className="mt-6 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-2xl border border-border bg-background/60 p-4">
-          <p className="text-sm font-semibold text-text-primary">I&rsquo;m buying a home</p>
-          <div className="mt-4 text-accent/60">
-            <BuyingHomeIcon />
+    <ProductCard
+      title="Home Journey"
+      description="A notes-first platform that helps people organize the journey from buying a home to owning and maintaining it."
+      href="/work/home-journey"
+      visual={
+        <div className="grid w-full gap-3 sm:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-text-primary">I&rsquo;m buying a home</p>
+            <div className="mt-4 text-accent/60">
+              <BuyingHomeIcon />
+            </div>
+          </div>
+          <div className="rounded-2xl border border-border bg-background/60 p-4">
+            <p className="text-sm font-semibold text-text-primary">I own a home</p>
+            <div className="mt-4 text-accent">
+              <OwnedHomeIcon />
+            </div>
           </div>
         </div>
-        <div className="rounded-2xl border border-border bg-background/60 p-4">
-          <p className="text-sm font-semibold text-text-primary">I own a home</p>
-          <div className="mt-4 text-accent">
-            <OwnedHomeIcon />
-          </div>
-        </div>
-      </div>
-
-      <TextLink href="/work/home-journey" className="mt-6 inline-flex items-center gap-1.5">
-        View case study <ArrowRight size={16} aria-hidden="true" />
-      </TextLink>
-    </article>
+      }
+    />
   );
 }

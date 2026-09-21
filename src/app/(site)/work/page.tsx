@@ -22,13 +22,13 @@ export default function WorkPage() {
         description="Products and experiments exploring AI, personal decision-making, and thoughtful software design."
       />
 
-      <div className="mt-12 space-y-6">
+      <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <WorkHomeJourneyFeature />
+        <WorkCoralFeature />
+      </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <WorkCoralFeature />
-          <WorkFutureExperimentsFeature />
-        </div>
+      <div className="mt-6">
+        <WorkFutureExperimentsFeature />
       </div>
     </Container>
   );
