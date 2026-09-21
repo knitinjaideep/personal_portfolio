@@ -5,8 +5,9 @@ interface PortraitProps {
   name: string;
   initials: string;
   // Only one approved portrait exists in this repository, so this string is
-  // a "portrait available" flag rather than a literal image src. The file
-  // lives under src/assets and must be loaded through a static import.
+  // a "portrait available" flag rather than a literal image src — the file
+  // lives under src/assets (not public/), so it must be loaded through
+  // Next.js static image import rather than a plain string src.
   portraitPath: string | null;
 }
 

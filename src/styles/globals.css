@@ -20,6 +20,8 @@
   --warm-tint: #f5e6d8;
   --status-active: #7c3aed;
   --status-coming-soon: #a78bfa;
+  --nav-glass-bg: rgba(255, 255, 255, 0.58);
+  --nav-glass-shadow: rgba(124, 58, 237, 0.12);
   --radius-sm: 0.75rem;
   --radius-md: 1.5rem;
   --radius-lg: 2rem;
@@ -53,6 +55,8 @@ html.dark {
   --warm-tint: rgba(226, 160, 107, 0.16);
   --status-active: #8b5cf6;
   --status-coming-soon: #c4b5fd;
+  --nav-glass-bg: rgba(24, 27, 34, 0.58);
+  --nav-glass-shadow: rgba(0, 0, 0, 0.32);
   --blue-glow: rgba(96, 165, 250, 0.3);
 }
 
@@ -92,6 +96,21 @@ body {
   outline-offset: 4px;
 }
 
+.site-glass-header {
+  outline: none;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    var(--nav-glass-bg);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+}
+
+html.dark .site-glass-header {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%),
+    var(--nav-glass-bg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -109,5 +128,24 @@ body {
   }
   100% {
     transform: translateY(-10px);
+  }
+}
+
+/* /resume/print: US Letter page, no animation, no shadows, selectable text. */
+@media print {
+  @page {
+    size: letter;
+    margin: 0.6in 0.75in;
+  }
+
+  .resume-print-page {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-print-page * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
   }
 }

@@ -12,7 +12,7 @@ interface DesktopNavigationProps {
 
 export default function DesktopNavigation({ navItems, pathname }: DesktopNavigationProps) {
   return (
-    <nav className="hidden items-center gap-6 md:flex">
+    <nav className="hidden items-center gap-1 rounded-full bg-transparent p-1 md:flex">
       {navItems.map((item) => {
         const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
 
@@ -21,8 +21,10 @@ export default function DesktopNavigation({ navItems, pathname }: DesktopNavigat
             key={item.href}
             href={item.href}
             aria-current={isActive ? 'page' : undefined}
-            className={`inline-flex items-center py-2 text-sm font-medium transition ${
-              isActive ? 'text-accent' : 'text-text-muted hover:text-text-primary'
+            className={`inline-flex items-center rounded-full px-3 py-1.5 text-sm font-semibold transition duration-200 hover:scale-110 ${
+              isActive
+                ? 'text-accent hover:text-warm'
+                : 'text-text-muted hover:text-accent'
             }`}
           >
             {item.label}

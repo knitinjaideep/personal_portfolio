@@ -17,13 +17,9 @@ export default function FeaturedWorkSection() {
           everyday life.
         </p>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <HomeJourneyCard />
-          </div>
-          <div className="lg:col-span-5">
-            <CoralCard />
-          </div>
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <HomeJourneyCard />
+          <CoralCard />
         </div>
       </Container>
     </section>

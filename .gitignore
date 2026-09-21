@@ -14,3 +14,7 @@ build/
 coverage/
 *.log
 .next/
+
+# Internal résumé source document — never publish, never commit.
+# See resume-source/README.md.
+resume-source/*.pdf

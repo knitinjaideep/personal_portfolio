@@ -1,0 +1,69 @@
+# Nitin Kotcherlakota
+
+Senior Software Engineer | Backend Systems | AI Applications
+
+New York City Metropolitan Area · [nitin.kotcherlakota@gmail.com](mailto:nitin.kotcherlakota@gmail.com) · [www.linkedin.com/in/nitin-kotcherlakota](https://www.linkedin.com/in/nitin-kotcherlakota/) · [nitinkotcherlakota.com](https://nitinkotcherlakota.com) · [github.com/knitinjaideep](https://github.com/knitinjaideep)
+
+## Professional Summary
+
+Senior Software Engineer with 8+ years of experience building enterprise applications, backend services, event-driven workflows, and customer-facing financial capabilities. Experienced with Java, Spring, Kafka, PostgreSQL, AWS, and modern application development. Currently extending this foundation into AI systems engineering, agentic workflows, local AI, and human-centered product development.
+
+## Technical Skills
+
+- **Languages:** Java, Kotlin, Python, TypeScript, JavaScript, C#, SQL
+- **Backend & Application Development:** Spring Boot, Next.js, React, Node.js
+- **Data & Messaging:** PostgreSQL, T-SQL, Kafka, SQS, SNS
+- **Cloud & Infrastructure:** AWS, Docker, Kubernetes, Jenkins, Argo CD, AWS CloudFormation
+
+## Professional Experience
+
+### Senior Software Engineer, JPMorganChase
+
+June 2024 – Present — Jersey City, New Jersey
+
+
+### Software Engineer II, Intuit
+
+January 2022 – February 2024 — Los Angeles, California
+
+- Built a streamlined onboarding capability for new money-in and money-out transaction types, reducing the time to add a new transaction type from about 45 minutes to a few seconds.
+- Designed and deployed a dual Kafka consumer that resolved idempotency issues affecting 32 operational-risk rules.
+- Created a reusable capability for collecting W-9 information, reducing developer time on related work by a reported 70%.
+- Led implementation of recurring cryptocurrency purchases and supported development and scaling of the platform's cryptocurrency buy, sell, and hold capabilities.
+- Supported continuous integration with Jenkins and continuous delivery with Argo CD on Kubernetes, and enabled customer tax-form delivery through AWS Batch workflows.
+- Implemented PagerDuty alerting integrated with AWS Lambda, S3, Batch, and CloudFormation to improve operational reliability.
+
+### Software Engineer III, IGT
+
+October 2021 – January 2022 — United States
+
+
+### Software Engineer, Sagitec Solutions
+
+August 2016 – October 2021 — Baltimore, Maryland area
+
+- Built features for unemployment-insurance systems using C#, Python, JavaScript, and a proprietary .NET framework, including user registration, wage submission, claim submission, and self-service reporting.
+- Developed correspondence-generation and BPM workflow capabilities, including scheduled batch jobs, and deployed changes to staging and UAT environments.
+- Analyzed query plans and data models, using T-SQL and entity-relationship diagrams, to identify and improve slow-running database queries.
+
+### Software Engineering Intern, Data Analytics, Pitney Bowes
+
+January 2016 – June 2016 — Danbury, Connecticut area
+
+- Built Python scripts using Pandas and XLRD to transform Excel data into structured formats for daily ad hoc reporting.
+- Wrote T-SQL stored procedures to support reporting workflows.
+
+## Selected Projects
+
+### Home Journey — Active Development
+
+A notes-first platform designed to help households organize buying, owning, and maintaining a home as one continuous record.
+
+- Designing Home Journey, a notes-first product concept for organizing home buying, owning, and maintenance as one continuous household record.
+- Building the product's site and information architecture — problem framing, buyer and owner journeys, capabilities, and roadmap — with Next.js, TypeScript, and Tailwind CSS.
+- Maintaining a public status roadmap that distinguishes active-development capabilities from planned directions as the product evolves.
+
+## Education
+
+- **Northern Illinois University** — Master of Science, Computer Science (2014 – 2016)
+- **Jawaharlal Nehru Technological University** — Bachelor of Engineering, Computer Science (2010 – 2014)
