@@ -115,7 +115,7 @@ export default function CoralPage() {
 
           <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center lg:gap-10">
             <div className="max-w-2xl">
-              <StatusBadge variant="active">Active Development</StatusBadge>
+              <StatusBadge>Active Development</StatusBadge>
 
               <h1 className="mt-5 text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
                 Coral
@@ -288,9 +288,10 @@ export default function CoralPage() {
           <div className="mt-10 rounded-[1.5rem] border border-border bg-surface p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-text-primary">Answer strategy</h3>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-text-muted">
-              Coral&apos;s chat pipeline classifies intent, selects a route, executes known SQL handlers
-              or document retrieval, builds a computed fact bundle, and then asks the local model to
-              narrate those facts. The LLM does not write SQL or calculate financial totals.
+              Coral&apos;s chat pipeline classifies intent, selects a route, executes known SQL
+              handlers or document retrieval, builds a computed fact bundle, and then asks the local
+              model to narrate those facts. The LLM does not write SQL or calculate financial
+              totals.
             </p>
           </div>
         </Container>

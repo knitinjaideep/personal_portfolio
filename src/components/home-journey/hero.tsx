@@ -24,7 +24,7 @@ export default function HomeJourneyHero() {
 
         <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center lg:gap-10">
           <div className="max-w-2xl">
-            <StatusBadge variant="active">Active Development</StatusBadge>
+            <StatusBadge>Active Development</StatusBadge>
 
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
               Home Journey

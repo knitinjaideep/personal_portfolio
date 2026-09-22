@@ -10,12 +10,14 @@ import HomeJourneyStructureDiagramSection from '@/components/home-journey/struct
 import HomeJourneyStatusSection from '@/components/home-journey/status-section';
 import HomeJourneyPlannedDirectionsSection from '@/components/home-journey/planned-directions-section';
 import HomeJourneyBackToWorkSection from '@/components/home-journey/back-to-work-section';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Home Journey — Nitin Kotcherlakota',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Home Journey',
   description:
     'A notes-first platform that helps people organize buying, owning, maintaining, and understanding a home as one continuous journey.',
-};
+  path: '/work/home-journey',
+});
 
 export default function HomeJourneyPage() {
   return (

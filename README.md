@@ -48,11 +48,10 @@ Open: `http://localhost:3001`
 
 - `/`
 - `/work`
+- `/personal`
+- `/contact`
 - `/work/home-journey`
 - `/work/coral`
-- `/lab`
-- `/notes`
-- `/about`
 - `/resume`
 - `/resume/print` — print-only, ATS-safe résumé layout (no header/footer/nav)
 
@@ -82,19 +81,22 @@ Open: `http://localhost:3001`
 
 Design references live in `design/mockups/` and are not imported into production pages.
 
-## Active vs Coming Soon rules
+## Site structure rules
 
-- `Home Journey` is the only active flagship product and complete public case study.
-- `Coral`, `Lab`, `Notes`, `Ask About My Work`, and future projects remain clearly marked as **Coming Soon**.
-- Do not imply those projects are launched or publicly available.
+- Primary navigation is limited to `Work`, `Personal`, and `Contact`.
+- `/work` is for professional career history and résumé actions.
+- `/personal` is for personal projects, photography, travel, and interests outside work.
+- `/contact` is the only page with the full contact form.
+- `/about`, `/lab`, and `/notes` redirect to the simplified public structure.
+- `Home Journey` and `Coral` remain available at their existing case-study URLs under `/work`.
 
 ## Résumé
 
 The résumé is generated from one typed source of truth, `src/content/resume.ts`,
 so the web page, print page, PDF, Markdown, and plain-text outputs cannot drift
-apart. Contact details (name, LinkedIn, email, portrait, résumé PDF path) live
-separately in `src/content/profile.ts`, shared with the rest of the site (e.g.
-`/about`, the footer contact links).
+apart. Shared profile/contact details (name, LinkedIn, GitHub, email, portrait,
+résumé PDF path) live in `src/content/profile.ts` and are reused by the site
+and résumé content.
 
 ### Editing résumé content
 
@@ -164,9 +166,9 @@ npm run resume:pdf
 The approved real portrait lives at `src/assets/images/nitin-portrait.jpg`
 and is loaded through a Next.js static image import (`src/components/about/portrait.tsx`),
 not a `public/`-relative string path, since the file intentionally stays
-under `src/assets/`. It appears on `/about` and the `/resume` web
-introduction only — it is excluded from `/resume/print`, the PDF, the
-Markdown output, and the plain-text output.
+under `src/assets/`. It appears on Home and the `/resume` web introduction
+only — it is excluded from `/resume/print`, the PDF, the Markdown output, and
+the plain-text output.
 
 ### Missing profile fields
 

@@ -7,6 +7,8 @@
  * resume/resume-content-audit.md (internal, not linked publicly).
  */
 
+import { profile } from '@/content/profile';
+
 export interface ResumeContact {
   name: string;
   headline: string;
@@ -61,14 +63,14 @@ export interface ResumeContent {
 
 export const resume: ResumeContent = {
   contact: {
-    name: 'Nitin Kotcherlakota',
+    name: profile.name,
     headline: 'Senior Software Engineer | Backend Systems | AI Applications',
     location: 'New York City Metropolitan Area',
-    email: 'nitin.kotcherlakota@gmail.com',
+    email: profile.email,
     phone: null,
-    linkedinUrl: 'https://www.linkedin.com/in/nitin-kotcherlakota/',
+    linkedinUrl: profile.linkedinUrl ?? 'https://www.linkedin.com/in/nitin-kotcherlakota/',
     portfolioUrl: 'https://nitinkotcherlakota.com',
-    githubUrl: 'https://github.com/knitinjaideep',
+    githubUrl: profile.githubUrl,
   },
 
   summary:
