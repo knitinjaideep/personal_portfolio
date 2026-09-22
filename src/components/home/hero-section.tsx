@@ -1,12 +1,9 @@
-import Link from 'next/link';
 import Container from '@/components/ui/container';
 import PrimaryButton from '@/components/ui/primary-button';
+import SecondaryButton from '@/components/ui/secondary-button';
 import Portrait from '@/components/about/portrait';
 import { getContactLinks } from '@/components/contact/contact-links';
 import { profile } from '@/content/profile';
-
-const HERO_INTERESTS = profile.interests.slice(0, 5);
-const HERO_FOCUS = profile.currentFocus.slice(0, 3);
 
 export default function HeroSection() {
   const contactLinks = getContactLinks();
@@ -29,43 +26,27 @@ export default function HeroSection() {
           <div className="max-w-2xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surfaceElevated px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Engineer, builder, AI systems in progress.
+              Engineer. Builder. Explorer.
             </p>
 
             <h1 className="mt-6 text-5xl font-semibold tracking-tight text-text-primary sm:text-6xl lg:text-7xl">
-              {profile.name}
+              Hi, I&rsquo;m <span className="text-accent">Nitin</span>.
             </h1>
 
             <p className="mt-4 text-2xl font-medium leading-snug text-text-primary sm:text-3xl">
-              Software engineer building human-centered{' '}
-              <span className="text-accent">AI products</span>.
+              I build thoughtful software for real life.
             </p>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-text-muted sm:text-lg">
-              {profile.shortBio} {profile.positioning}
+              Senior Software Engineer with 8+ years of experience building scalable systems and
+              human-centered products. I&rsquo;m equally curious about AI, personal productivity,
+              travel, photography, and the small problems that make me want to build something
+              better.
             </p>
-
-            <ul className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-sm text-text-muted">
-              {HERO_INTERESTS.map((interest, index) => (
-                <li key={interest} className="flex items-center gap-3">
-                  <span>{interest}</span>
-                  {index < HERO_INTERESTS.length - 1 ? (
-                    <span aria-hidden="true" className="text-borderStrong">
-                      &bull;
-                    </span>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <PrimaryButton href="/work">Explore my work</PrimaryButton>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center rounded-full border border-borderStrong bg-transparent px-6 py-3 text-sm font-semibold text-text-primary transition hover:bg-surfaceElevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                About me
-              </Link>
+              <SecondaryButton href="/personal">See my personal side</SecondaryButton>
             </div>
 
             {contactLinks.length > 0 ? (
@@ -86,29 +67,11 @@ export default function HeroSection() {
           </div>
 
           <div className="mx-auto w-full max-w-sm lg:max-w-none">
-            <div className="relative">
-              <Portrait
-                name={profile.name}
-                initials={profile.initials}
-                portraitPath={profile.portraitPath}
-              />
-              <div className="mt-5 rounded-[1.5rem] border border-border bg-surface/85 p-5 shadow-sm backdrop-blur">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                  Current Focus
-                </p>
-                <ul className="mt-3 space-y-2">
-                  {HERO_FOCUS.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-text-muted">
-                      <span
-                        aria-hidden="true"
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <Portrait
+              name={profile.name}
+              initials={profile.initials}
+              portraitPath={profile.portraitPath}
+            />
           </div>
         </div>
       </Container>
