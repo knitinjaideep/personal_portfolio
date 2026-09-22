@@ -13,19 +13,19 @@ const AREAS: { title: string; description: string; href: string; icon: LucideIco
   {
     title: 'Personal Projects',
     description: 'Ideas that improve everyday life.',
-    href: '/personal',
+    href: '/personal#projects',
     icon: Lightbulb,
   },
   {
     title: 'Photography',
     description: 'Capturing moments and new perspectives.',
-    href: '/personal',
+    href: '/personal#photography',
     icon: Camera,
   },
   {
     title: 'Travel & Outdoors',
     description: 'Exploring new places and staying active.',
-    href: '/personal',
+    href: '/personal#travel',
     icon: Plane,
   },
 ];
