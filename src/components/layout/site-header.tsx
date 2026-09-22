@@ -10,10 +10,8 @@ import MobileNavigation from '@/components/layout/mobile-navigation';
 
 const navItems = [
   { href: '/work', label: 'Work' },
-  { href: '/lab', label: 'Lab' },
-  { href: '/notes', label: 'Notes' },
-  { href: '/about', label: 'About' },
-  { href: '/resume', label: 'Résumé' },
+  { href: '/personal', label: 'Personal' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function SiteHeader() {
